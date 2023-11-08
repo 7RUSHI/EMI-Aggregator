@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EMI Aggregator</string>
+    <string name="society_menu_settings">Settings</string>
+    <string name="society_menu_about">About</string>
 </resources>
