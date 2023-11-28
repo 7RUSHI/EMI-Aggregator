@@ -1,4 +1,4 @@
-package com.vrushi.emiaggregator.feature_society.presentation.components
+package com.vrushi.emiaggregator.feature_society.presentation.societies.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box

@@ -56,8 +56,8 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     val roomVersion = "2.6.0"
-    val hiltVersion = "2.48.1"
-    val navVersion = "2.7.5"
+    val daggerHiltVersion = "2.48.1"
+    val hiltVersion = "1.1.0"
     val workVersion = "2.8.1"
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
@@ -69,9 +69,9 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.room:room-runtime:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
-    implementation("com.google.dagger:hilt-android:$hiltVersion")
-    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
-    implementation("androidx.navigation:navigation-compose:$navVersion")
+    implementation("com.google.dagger:hilt-android:$daggerHiltVersion")
+    ksp("com.google.dagger:hilt-compiler:$daggerHiltVersion")
+    implementation("androidx.hilt:hilt-navigation-compose:$hiltVersion")
     implementation("androidx.work:work-runtime-ktx:$workVersion")
     implementation("androidx.startup:startup-runtime:1.1.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")

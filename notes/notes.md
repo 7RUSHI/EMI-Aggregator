@@ -2,12 +2,14 @@
 
 ## Tasks
 
-- Build On-board Screen
-- Setup Runtime Permissions: Storage, Notification
+- Add Permission Check in Main Screen
+- Data store to show Onboarding screen only once
 - Build Bottom Sheet to add,edit Society
 - Multi-Select List to delete Society
 - Setup Settings Preference
 - Setup import/export DB
+- Build On-board Screen `Done`
+- Setup Runtime Permissions: Storage, Notification `Done`
 - Setup Multi-Language `Done`
 - Setup Room `Done`
 - Setup Hilt `Done`

@@ -1,4 +1,4 @@
-package com.vrushi.emiaggregator.feature_society.presentation
+package com.vrushi.emiaggregator.feature_society.presentation.societies
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,18 +22,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.vrushi.emiaggregator.R
-import com.vrushi.emiaggregator.feature_society.presentation.components.OutlinedCard
+import com.vrushi.emiaggregator.feature_society.presentation.SocietyViewModel
+import com.vrushi.emiaggregator.feature_society.presentation.societies.components.OutlinedCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SocietyScreen(navController: NavController, vm: SocietyViewModel = viewModel()) {
-    val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
     Scaffold(
