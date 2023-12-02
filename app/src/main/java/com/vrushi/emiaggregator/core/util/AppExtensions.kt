@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.content.ContextCompat
+import androidx.datastore.dataStore
+import com.vrushi.emiaggregator.core.datastore.AppSettingsSerializer
 
 sealed class AppExtensions {
     companion object {
@@ -37,6 +39,8 @@ sealed class AppExtensions {
                 ContextCompat.checkSelfPermission(context,permission) == PackageManager.PERMISSION_GRANTED
             }
         }
+
+        val Context.appSettingsDataStore by dataStore("app-settings.json", AppSettingsSerializer)
     }
 
 }

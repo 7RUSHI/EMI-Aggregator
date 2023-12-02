@@ -2,8 +2,8 @@
 
 ## Tasks
 
-- Add Permission Check in Main Screen
-- Data store to show Onboarding screen only once
+- Add Permission Check in Main Screen `Done`
+- Data store to show Onboarding screen only once `Done`
 - Build Bottom Sheet to add,edit Society
 - Multi-Select List to delete Society
 - Setup Settings Preference

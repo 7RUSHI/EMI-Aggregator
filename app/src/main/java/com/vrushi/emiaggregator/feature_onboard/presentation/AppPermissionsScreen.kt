@@ -34,7 +34,7 @@ fun AppPermissionsScreen(
     state: OnboardState,
     snackbarHostState: SnackbarHostState,
     onEvent: (OnboardEvents) -> Unit,
-    onOnboardingFinished: () -> Unit,
+    onFinished: () -> Unit,
     sharedFlow: SharedFlow<ScreenEvents>
 ) {
     val context = LocalContext.current
@@ -77,7 +77,7 @@ fun AppPermissionsScreen(
             }
             Spacer(modifier = Modifier.width(4.dp))
             Button(enabled = state.isAllPermissionsAccepted, onClick = {
-                onOnboardingFinished()
+                onFinished()
             }) {
                 Text(
                     text = stringResource(id = R.string.app_permissions_button_start)

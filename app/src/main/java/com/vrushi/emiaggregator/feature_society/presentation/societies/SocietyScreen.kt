@@ -61,10 +61,12 @@ fun SocietyScreen(navController: NavController, vm: SocietyViewModel = viewModel
                         onDismissRequest = { vm.closeDropDown() }
                     ) {
                         DropdownMenuItem(
-                            text = { Text(stringResource(R.string.society_menu_settings)) }, onClick = { /*TODO*/ }
+                            text = { Text(stringResource(R.string.society_menu_settings)) },
+                            onClick = { /*TODO*/ }
                         )
                         DropdownMenuItem(
-                            text = { Text(stringResource(R.string.society_menu_about)) }, onClick = { /*TODO*/ }
+                            text = { Text(stringResource(R.string.society_menu_about)) },
+                            onClick = { /*TODO*/ }
                         )
                     }
                 }
