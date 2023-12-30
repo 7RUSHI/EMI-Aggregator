@@ -4,7 +4,7 @@ sealed class Screen(val route: String) {
 }
 
 sealed class GlobalScreens(){
-    object AppPermissionsScreen : Screen("app_permissions_screen")
+    object PermissionsScreen : Screen("app_permissions_screen")
 }
 
 sealed class OnBoardingScreens() {
@@ -15,5 +15,7 @@ sealed class OnBoardingScreens() {
 sealed class AppScreens() {
     object NavRoot : Screen("Main")
     object MainScreen : Screen("main_screen")
+
+    object SettingScreen : Screen("setting_screen")
 }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_launcher_foreground">
+    <target
+        android:animation="@animator/logo_animator"
+        android:name="center_arrow"/>
+    <target
+        android:animation="@animator/logo_animator"
+        android:name="top_arrow"/>
+    <target
+        android:animation="@animator/logo_animator"
+        android:name="right_arrow"/>
+    <target
+        android:animation="@animator/logo_animator"
+        android:name="bottom_arrow"/>
+    <target
+        android:animation="@animator/logo_animator"
+        android:name="left_arrow"/>
+</animated-vector>

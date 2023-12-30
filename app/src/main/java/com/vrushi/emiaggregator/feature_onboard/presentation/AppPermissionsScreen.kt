@@ -23,9 +23,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.vrushi.emiaggregator.R
-import com.vrushi.emiaggregator.core.presentation.util.findActivity
-import com.vrushi.emiaggregator.core.presentation.util.openAppSettings
 import com.vrushi.emiaggregator.core.util.AppConstants
+import com.vrushi.emiaggregator.core.util.AppExtensions.Companion.findActivity
+import com.vrushi.emiaggregator.core.util.AppExtensions.Companion.openAppSettings
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.collectLatest
 
@@ -35,7 +35,7 @@ fun AppPermissionsScreen(
     snackbarHostState: SnackbarHostState,
     onEvent: (OnboardEvents) -> Unit,
     onFinished: () -> Unit,
-    sharedFlow: SharedFlow<ScreenEvents>
+    sharedFlow: SharedFlow<PermissionsScreenEvents>
 ) {
     val context = LocalContext.current
     val allAppPermissionsResultLauncher = rememberLauncherForActivityResult(
@@ -88,7 +88,7 @@ fun AppPermissionsScreen(
     LaunchedEffect(key1 = true) {
         sharedFlow.collectLatest { event ->
             when (event) {
-                is ScreenEvents.ShowSnackbar -> {
+                is PermissionsScreenEvents.ShowSnackbar -> {
                     val isPermanentDeclined = !context.findActivity()
                         .shouldShowRequestPermissionRationale(event.permission)
                     if (isPermanentDeclined) {

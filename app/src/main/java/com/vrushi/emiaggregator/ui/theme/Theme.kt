@@ -15,56 +15,95 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val appGreenLightTheme = lightColorScheme(
+    primary = green_primary_40,
+    onPrimary = white,
+    primaryContainer = green_primary_90,
+    onPrimaryContainer = green_primary_10,
+    inversePrimary = green_primary_80,
+    secondary = green_secondary_40,
+    onSecondary = white,
+    secondaryContainer = green_secondary_90,
+    onSecondaryContainer = green_secondary_10,
+    tertiary = green_tertiary_40,
+    onTertiary = white,
+    tertiaryContainer = green_tertiary_90,
+    onTertiaryContainer = green_tertiary_10,
+    error = green_error_40,
+    onError = white,
+    errorContainer = green_error_90,
+    onErrorContainer = green_error_10,
+    background = green_neutral_99,
+    onBackground = green_neutral_10,
+    surface = green_neutral_99,
+    onSurface = green_neutral_10,
+    inverseSurface = green_neutral_20,
+    inverseOnSurface = green_neutral_90,
+    surfaceVariant = green_neutral_variant_90,
+    onSurfaceVariant = green_neutral_variant_30,
+    outline = green_neutral_variant_50,
+    outlineVariant = green_neutral_variant_80
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+private val appGreenDarkTheme = darkColorScheme(
+    primary = green_primary_40,
+    onPrimary = white,
+    primaryContainer = green_primary_90,
+    onPrimaryContainer = green_primary_10,
+    inversePrimary = green_primary_80,
+    secondary = green_secondary_40,
+    onSecondary = white,
+    secondaryContainer = green_secondary_90,
+    onSecondaryContainer = green_secondary_10,
+    tertiary = green_tertiary_40,
+    onTertiary = white,
+    tertiaryContainer = green_tertiary_90,
+    onTertiaryContainer = green_tertiary_10,
+    error = green_error_40,
+    onError = white,
+    errorContainer = green_error_90,
+    onErrorContainer = green_error_10,
+    background = green_neutral_90,
+    onBackground = green_neutral_10,
+    surface = green_neutral_99,
+    onSurface = green_neutral_10,
+    inverseSurface = green_neutral_20,
+    inverseOnSurface = green_neutral_90,
+    surfaceVariant = green_neutral_variant_90,
+    onSurfaceVariant = green_neutral_variant_30,
+    outline = green_neutral_variant_50,
+    outlineVariant = green_neutral_variant_80
 )
 
 @Composable
 fun EMIAggregatorTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
+    val appColorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> appGreenDarkTheme
+        else -> appGreenLightTheme
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
+            window.statusBarColor = appColorScheme.primary.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+        colorScheme = appColorScheme,
+        typography = appTypography,
+        shapes = appShapes,
         content = content
     )
 }

@@ -4,8 +4,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SocietyViewModel: ViewModel() {
+@HiltViewModel
+class SocietyViewModel @Inject constructor(): ViewModel() {
     var expanded by mutableStateOf(false)
         private set
     var appBarTitle by mutableStateOf("Society")

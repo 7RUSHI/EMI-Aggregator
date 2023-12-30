@@ -10,4 +10,18 @@ object AppSettingsDataStoreExtensions {
             )
         }
     }
+    suspend fun DataStore<AppSettings>.setAppLanguage(language: AppLanguage){
+        updateData {
+            it.copy(
+                appLanguage = language
+            )
+        }
+    }
+    suspend fun DataStore<AppSettings>.setAppBackupFrequency(frequency: AppBackupFrequency){
+        updateData {
+            it.copy(
+                appBackupFrequency = frequency
+            )
+        }
+    }
 }

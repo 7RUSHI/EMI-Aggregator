@@ -1,11 +1,45 @@
 <resources>
     <string name="app_name">EMI Aggregator</string>
+    <string name="society_app_bar_title">Society</string>
     <string name="society_menu_settings">Settings</string>
     <string name="society_menu_about">About</string>
     <string name="app_flow_button_next">Next</string>
-    <string name="app_flow_detail_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet dolor eligendi harum modi mollitia recusandae sint tempora voluptas voluptatem! Accusamus atque consequatur, debitis ipsam magni minus odit quidem velit?</string>
+    <string name="app_flow_detail_text">EMI Aggregator is your comprehensive solution for effortlessly managing EMI payments and tracking the financial transactions of Housing Societies Members. This intuitive app simplifies the process of monitoring EMI payments, while also providing robust features to track deposits, shares, subscriptions, and terms.</string>
     <string name="app_permissions_button_allow">Allow</string>
     <string name="app_permissions_button_start">Start</string>
     <string name="app_permissions_snackbar_message">Please grant necessary permissions</string>
     <string name="app_permissions_snackbar_action_label_goto">Settings</string>
+
+    <string name="app_settings_intetface_category">Interface</string>
+    <string name="app_settings_language_headline">App language</string>
+    <string name="app_settings_language_support">Change language.</string>
+    <string name="app_settings_language_option_english">English</string>
+    <string name="app_settings_language_option_marathi">Marathi</string>
+    <string name="app_settings_theme_headline">App theme</string>
+    <string name="app_settings_theme_support">Change theme.</string>
+    <string name="app_settings_theme_option_light">Light</string>
+    <string name="app_settings_theme_option_dark">Dark</string>
+
+    <string name="app_settings_backup_category">Backup</string>
+    <string name="app_settings_schedule_headline">Schedule backup</string>
+    <string name="app_settings_schedule_support">Change backup frequency.</string>
+    <string name="app_settings_schedule_option_daily">Daily - every 24 hr</string>
+    <string name="app_settings_schedule_option_weekly">Weekly - every 7 days</string>
+    <string name="app_settings_schedule_option_monthly">Monthly - every 31 days</string>
+    <string name="app_settings_outputfolder_headline">Output folder</string>
+    <string name="app_settings_outputfolder_support">Change backup folder. Setup SD Card folder fot better reliability</string>
+
+    <string name="app_settings_database_category">Database</string>
+    <string name="app_settings_exportdb_headline">Export full backup</string>
+    <string name="app_settings_exportdb_support">Generates a file that contains all your data. This file can be imported back.</string>
+    <string name="app_settings_exportcsv_headline">Export as CSV</string>
+    <string name="app_settings_exportcsv_support">Generates files that can be opened by spreadsheet software such as Microsoft Excel or OpenOffice Calc. This file cannot be imported back.</string>
+    <string name="app_settings_importdata_headline">Import data</string>
+    <string name="app_settings_importdata_support">Supports full backups exported by this app.</string>
+
+    <string name="app_settings_troubleshooting_category">Troubleshooting</string>
+    <string name="app_settings_bugreport_headline">Generate bug report</string>
+
+    <string name="app_settings_links_category">Links</string>
+    <string name="app_settings_about_headline">About</string>
 </resources>

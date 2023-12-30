@@ -1,11 +1,12 @@
 package com.vrushi.emiaggregator.di
 
-import android.app.Application
-import androidx.room.Room
-import com.vrushi.emiaggregator.feature_society.data.data_source.SocietyDatabase
+import android.content.Context
+import com.vrushi.emiaggregator.core.datastore.DataStoreRepository
+import com.vrushi.emiaggregator.core.datastore.DataStoreRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -24,4 +25,11 @@ object AppModule {
             SocietyDatabase.DATABASE_NAME
         ).build()
     }*/
+
+    @Singleton
+    @Provides
+    fun provideDataStoreRepository(
+        @ApplicationContext appContext: Context
+    ): DataStoreRepository = DataStoreRepositoryImpl(appContext)
+
 }

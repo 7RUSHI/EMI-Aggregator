@@ -1,6 +1,6 @@
 package com.vrushi.emiaggregator.feature_onboard.presentation
 
-sealed class ScreenEvents {
+sealed class PermissionsScreenEvents {
     data class ShowSnackbar(val permission: String, val message: Int) :
-        ScreenEvents()
+        PermissionsScreenEvents()
 }

@@ -1,5 +1,6 @@
 package com.vrushi.emiaggregator.core.datastore
 
+import androidx.datastore.core.CorruptionException
 import androidx.datastore.core.Serializer
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerializationException
@@ -19,7 +20,7 @@ object AppSettingsSerializer : Serializer<AppSettings> {
             Json.decodeFromStream<AppSettings>(input)
         } catch (e: SerializationException) {
             e.printStackTrace()
-            TODO("Handle Errors")
+            throw CorruptionException("Unable to read Settings", e)
         }
     }
 

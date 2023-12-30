@@ -13,5 +13,7 @@ sealed class AppConstants {
         val permissionsToRequest = permissionsToAsk.filter { permission ->
             AppExtensions.checkAskPermission(permission)
         }.toTypedArray()
+
+        const val APP_SETTINGS_FILE_NAME = "app-settings.json"
     }
 }
