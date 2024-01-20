@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun OutlinedCard(name: String, modifier: Modifier = Modifier) {
+fun SocietyCard(name: String, modifier: Modifier = Modifier) {
     OutlinedCard(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface,

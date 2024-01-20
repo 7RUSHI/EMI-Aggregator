@@ -1,15 +1,33 @@
 <resources>
     <string name="app_name">EMI Aggregator</string>
+    <!--App Bar Title-->
     <string name="society_app_bar_title">Society</string>
+    <string name="setting_app_bar_title">Setting</string>
+    <string name="permission_app_bar_title">Permission</string>
+    <string name="app_flow_app_bar_title">Flow</string>
+    <!--<string name="_app_bar_title"></string>-->
+    <!--End-->
+    <!--App Bar Menu-->
     <string name="society_menu_settings">Settings</string>
     <string name="society_menu_about">About</string>
+    <!--End-->
+    <!--Button-->
     <string name="app_flow_button_next">Next</string>
-    <string name="app_flow_detail_text">EMI Aggregator is your comprehensive solution for effortlessly managing EMI payments and tracking the financial transactions of Housing Societies Members. This intuitive app simplifies the process of monitoring EMI payments, while also providing robust features to track deposits, shares, subscriptions, and terms.</string>
     <string name="app_permissions_button_allow">Allow</string>
     <string name="app_permissions_button_start">Start</string>
+    <!--End-->
+    <!--Text-->
+    <string name="app_flow_description">EMI Aggregator is your comprehensive solution for effortlessly managing EMI payments and tracking the financial transactions of Housing Societies Members. This intuitive app simplifies the process of monitoring EMI payments, while also providing robust features to track deposits, shares, subscriptions, and terms.</string>
+    <string name="app_permissions_description">To ensure a seamless experience, the EMI Aggregator app requires specific permissions. Kindly grant permissions; a dialog will appear, click \'Allow\' to proceed</string>
+    <!--End-->
+    <!--Snackbar-->
     <string name="app_permissions_snackbar_message">Please grant necessary permissions</string>
     <string name="app_permissions_snackbar_action_label_goto">Settings</string>
-
+    <string name="snackbar_setting_schedule_daily_success">App backups are configured for every 24 hrs</string>
+    <string name="snackbar_setting_schedule_weekly_success">App backups are configured for every 7 days</string>
+    <string name="snackbar_setting_schedule_monthly_success">App backups are configured for every 31 days</string>
+    <!--End-->
+    <!--App Setting-->
     <string name="app_settings_intetface_category">Interface</string>
     <string name="app_settings_language_headline">App language</string>
     <string name="app_settings_language_support">Change language.</string>
@@ -19,11 +37,12 @@
     <string name="app_settings_theme_support">Change theme.</string>
     <string name="app_settings_theme_option_light">Light</string>
     <string name="app_settings_theme_option_dark">Dark</string>
+    <string name="app_settings_theme_option_system">System</string>
 
     <string name="app_settings_backup_category">Backup</string>
     <string name="app_settings_schedule_headline">Schedule backup</string>
     <string name="app_settings_schedule_support">Change backup frequency.</string>
-    <string name="app_settings_schedule_option_daily">Daily - every 24 hr</string>
+    <string name="app_settings_schedule_option_daily">Daily - every 24 hrs</string>
     <string name="app_settings_schedule_option_weekly">Weekly - every 7 days</string>
     <string name="app_settings_schedule_option_monthly">Monthly - every 31 days</string>
     <string name="app_settings_outputfolder_headline">Output folder</string>
@@ -42,4 +61,5 @@
 
     <string name="app_settings_links_category">Links</string>
     <string name="app_settings_about_headline">About</string>
+    <!--End-->
 </resources>

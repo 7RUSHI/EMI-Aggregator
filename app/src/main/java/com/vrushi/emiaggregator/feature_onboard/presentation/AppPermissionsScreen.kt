@@ -26,6 +26,9 @@ import com.vrushi.emiaggregator.R
 import com.vrushi.emiaggregator.core.util.AppConstants
 import com.vrushi.emiaggregator.core.util.AppExtensions.Companion.findActivity
 import com.vrushi.emiaggregator.core.util.AppExtensions.Companion.openAppSettings
+import com.vrushi.emiaggregator.feature_onboard.OnboardEvents
+import com.vrushi.emiaggregator.feature_onboard.OnboardState
+import com.vrushi.emiaggregator.feature_onboard.UiPermissionsEvents
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.collectLatest
 
@@ -35,7 +38,7 @@ fun AppPermissionsScreen(
     snackbarHostState: SnackbarHostState,
     onEvent: (OnboardEvents) -> Unit,
     onFinished: () -> Unit,
-    sharedFlow: SharedFlow<PermissionsScreenEvents>
+    sharedFlow: SharedFlow<UiPermissionsEvents>
 ) {
     val context = LocalContext.current
     val allAppPermissionsResultLauncher = rememberLauncherForActivityResult(
@@ -65,7 +68,7 @@ fun AppPermissionsScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(stringResource(id = R.string.app_flow_detail_text), textAlign = TextAlign.Center)
+        Text(stringResource(id = R.string.app_permissions_description), textAlign = TextAlign.Center)
         Spacer(modifier = Modifier.height(8.dp))
         Row() {
             Button(enabled = !state.isAllPermissionsAccepted, onClick = {
@@ -88,7 +91,7 @@ fun AppPermissionsScreen(
     LaunchedEffect(key1 = true) {
         sharedFlow.collectLatest { event ->
             when (event) {
-                is PermissionsScreenEvents.ShowSnackbar -> {
+                is UiPermissionsEvents.ShowSnackbar -> {
                     val isPermanentDeclined = !context.findActivity()
                         .shouldShowRequestPermissionRationale(event.permission)
                     if (isPermanentDeclined) {

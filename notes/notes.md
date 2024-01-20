@@ -2,14 +2,24 @@
 
 ## Tasks
 
-- Extract constants `Done`
+- Add App Bar in Settings, Back icon `Done`
+- Complete & Fix App Flow Screens `Done`
 - Complete Settings Screen `In-progress`
-  - Complete onClicks
+  - Complete Output folder - default sd card internal app dir downloads if not available use emulated internal app dir
+  - Custom path selection
+  - Bug Report
+  - About
+- Room DB Design
 - UI Screens
   - Build Bottom Sheet to add,edit Society
   - Multi-Select List to delete Society
-- Room DB Design
+- Document all screens
 - Setup import/export DB
+- Setup Dark mode `Optimize`
+- Complete Theming `Optimize`
+  - App Bar color change
+- Remove Permissions `Done`
+- Extract constants `Done`
 - Add Permission Check in Main Screen `Done`
 - Data store to show Onboarding screen only once `Done`
 - Build On-board Screen `Done`
@@ -22,8 +32,6 @@
 - Setup WorkManager `Done`
 - Setup Material UI `Done`
 - Setup Startup : WorkManager `Done`
-- Document all screens
-- Setup Dark mode
 
 ## Links
 

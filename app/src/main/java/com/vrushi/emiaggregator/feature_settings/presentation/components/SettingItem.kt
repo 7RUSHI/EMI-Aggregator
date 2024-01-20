@@ -7,7 +7,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -17,16 +16,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.vrushi.emiaggregator.core.datastore.AppBackupFrequency
 import com.vrushi.emiaggregator.core.datastore.AppLanguage
+import com.vrushi.emiaggregator.core.datastore.AppTheme
 import com.vrushi.emiaggregator.feature_settings.presentation.AboutSettingProvider
-import com.vrushi.emiaggregator.feature_settings.presentation.AppLanguageSettingProvider
-import com.vrushi.emiaggregator.feature_settings.presentation.AppScheduleBackupSettingProvider
-import com.vrushi.emiaggregator.feature_settings.presentation.AppThemeSettingProvider
 import com.vrushi.emiaggregator.feature_settings.presentation.BugReportSettingProvider
 import com.vrushi.emiaggregator.feature_settings.presentation.ExportCSVSettingProvider
 import com.vrushi.emiaggregator.feature_settings.presentation.ExportDBSettingProvider
 import com.vrushi.emiaggregator.feature_settings.presentation.ImportDBSettingProvider
+import com.vrushi.emiaggregator.feature_settings.presentation.LanguageSettingProvider
 import com.vrushi.emiaggregator.feature_settings.presentation.OutputFolderSettingProvider
+import com.vrushi.emiaggregator.feature_settings.presentation.ScheduleBackupSettingProvider
 import com.vrushi.emiaggregator.feature_settings.presentation.SettingProvider
+import com.vrushi.emiaggregator.feature_settings.presentation.ThemeSettingProvider
+import com.vrushi.emiaggregator.feature_settings.presentation.components.dialogs.LanguageDialog
+import com.vrushi.emiaggregator.feature_settings.presentation.components.dialogs.ScheduleBackupDialog
+import com.vrushi.emiaggregator.feature_settings.presentation.components.dialogs.ThemeDialog
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,29 +39,28 @@ fun SettingItem(
     onEvent: (SettingItemEvents) -> Unit
 ) {
     val scope = rememberCoroutineScope()
-    val (languageDialog,showLanguageDialog) = remember {
+    val (languageDialog, showLanguageDialog) = remember {
         mutableStateOf(false)
     }
-    val themeDialog by remember {
+    val (themeDialog, showThemeDialog) = remember {
         mutableStateOf(false)
     }
-    val scheduleBackupDialog by remember {
+    val (scheduleBackupDialog, showScheduleBackupDialog) = remember {
         mutableStateOf(false)
     }
-    val options: List<Int>?
     ListItem(
         modifier = Modifier.clickable {
             when (provider) {
-                is AppLanguageSettingProvider -> {
+                is LanguageSettingProvider -> {
                     showLanguageDialog(true)
                 }
 
-                is AppThemeSettingProvider -> {
-
+                is ThemeSettingProvider -> {
+                    showThemeDialog(true)
                 }
 
-                is AppScheduleBackupSettingProvider -> {
-                    onEvent(SettingItemEvents.OnAppBackupScheduleChange(AppBackupFrequency.WEEKLY))
+                is ScheduleBackupSettingProvider -> {
+                    showScheduleBackupDialog(true)
                 }
 
                 is OutputFolderSettingProvider -> {
@@ -107,50 +109,36 @@ fun SettingItem(
         }
     )
     if (languageDialog) {
-        AppLanguageDialog(provider, state?.value as? AppLanguage,onEvent, onDismissRequest = {
-            showLanguageDialog(false)
-        })
+        LanguageDialog(
+            provider as LanguageSettingProvider,
+            state?.value as? AppLanguage,
+            onItemClick = {
+                onEvent(SettingItemEvents.OnAppLanguageChange(it))
+            },
+            onDismissRequest = {
+                showLanguageDialog(false)
+            })
     }
-}
-
-@Composable
-fun AppLanguageDialog(
-    provider: SettingProvider,
-    selected: AppLanguage?,
-    onEvent: (SettingItemEvents) -> Unit,
-    onDismissRequest: () -> Unit,
-) {
-    SettingDialog(
-        title = provider.headline,
-        radioOptions = provider.options,
-        selected = when (selected) {
-            AppLanguage.ENGLISH -> {
-                provider.options[0]
-            }
-
-            AppLanguage.MARATHI -> {
-                provider.options[1]
-            }
-
-            else -> {
-                provider.options[0]
-            }
-        },
-        onItemClick = {
-            when (it) {
-                provider.options[0] -> {
-                    onEvent(SettingItemEvents.OnAppLanguageChange(AppLanguage.ENGLISH))
-                }
-
-                provider.options[1] -> {
-                    onEvent(SettingItemEvents.OnAppLanguageChange(AppLanguage.MARATHI))
-                }
-
-                else -> {
-                    onEvent(SettingItemEvents.OnAppLanguageChange(AppLanguage.ENGLISH))
-                }
-            }
-        },
-        onDismissRequest = onDismissRequest
-    )
+    if (themeDialog) {
+        ThemeDialog(
+            provider as ThemeSettingProvider,
+            state?.value as? AppTheme,
+            onItemClick = {
+                onEvent(SettingItemEvents.OnAppThemeChange(it))
+            },
+            onDismissRequest = {
+                showThemeDialog(false)
+            })
+    }
+    if (scheduleBackupDialog) {
+        ScheduleBackupDialog(
+            provider as ScheduleBackupSettingProvider,
+            state?.value as? AppBackupFrequency,
+            onItemClick = {
+                onEvent(SettingItemEvents.OnAppBackupScheduleChange(it))
+            },
+            onDismissRequest = {
+                showScheduleBackupDialog(false)
+            })
+    }
 }

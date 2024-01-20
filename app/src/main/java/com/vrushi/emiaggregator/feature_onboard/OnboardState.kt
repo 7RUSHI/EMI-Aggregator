@@ -1,4 +1,4 @@
-package com.vrushi.emiaggregator.feature_onboard.presentation
+package com.vrushi.emiaggregator.feature_onboard
 
 data class OnboardState(
     var isAllPermissionsAccepted: Boolean = false,

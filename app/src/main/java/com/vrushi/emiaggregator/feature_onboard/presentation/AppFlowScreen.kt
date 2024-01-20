@@ -35,14 +35,14 @@ fun AppFlowScreen(onNextScreen: () -> Unit) {
         ){
             Image(modifier = Modifier
                 .height(160.dp)
-                .width(160.dp),painter = painterResource(id = R.drawable.ic_android_black_24dp), contentDescription = "Application Logo")
+                .width(160.dp),painter = painterResource(id = R.drawable.real_estate_agent_primary_24), contentDescription = "Application Logo")
         }
         Column(
             modifier = Modifier.weight(1f).fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom
         ) {
-            Text(stringResource(id = R.string.app_flow_detail_text), textAlign = TextAlign.Center)
+            Text(stringResource(id = R.string.app_flow_description), textAlign = TextAlign.Center)
             Spacer(modifier = Modifier.height(4.dp))
             Button(onClick = { onNextScreen() }) {
                 Text(stringResource(id = R.string.app_flow_button_next))

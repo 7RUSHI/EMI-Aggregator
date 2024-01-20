@@ -23,7 +23,7 @@ val appTypography = Typography(
         fontFamily = jostBook,
         fontSize = 57.sp,
         lineHeight = 64.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 0.25.sp
     ),
     displayMedium = TextStyle(
         fontFamily = jostBook,

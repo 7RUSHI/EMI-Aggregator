@@ -1,27 +1,14 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="72dp"
     android:height="72dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+  <group android:scaleX="0.5"
+      android:scaleY="0.5"
+      android:translateX="240"
+      android:translateY="240">
     <path
-        android:name="bottom_arrow"
-        android:fillColor="#072100"
-        android:pathData="M54,90 L38.86,74.86 47.05,66.68 54,73.64l6.95,-6.95 8.18,8.18z" />
-    <path
-        android:name="right_arrow"
-        android:fillColor="#072100"
-        android:pathData="M74.86,69.14 L66.68,60.95 73.64,54 66.68,47.05 74.86,38.86 90,54Z" />
-    <path
-        android:name="left_arrow"
-        android:fillColor="#072100"
-        android:pathData="M33.14,69.14 L18,54 33.14,38.86 41.32,47.05 34.36,54l6.95,6.95z" />
-    <path
-        android:name="top_arrow"
-        android:fillColor="#072100"
-        android:pathData="M47.05,41.32 L38.86,33.14 54,18 69.14,33.14 60.95,41.32 54,34.36Z"
-        android:strokeColor="#00000000" />
-    <path
-        android:name="center_arrow"
-        android:fillColor="#072100"
-        android:pathData="M54,60.55 L47.45,54 54,47.45 60.55,54Z" />
+        android:pathData="m558,816 l238,-74q-5,-9 -14.5,-15.5T760,720L558,720q-27,0 -43,-2t-33,-8l-57,-19q-16,-5 -23,-20t-2,-31q5,-16 19.5,-23.5T450,614l42,14q17,5 38.5,8t58.5,4h11q0,-11 -6.5,-21T578,606l-234,-86h-64v220l278,76ZM537,894 L280,822q-8,26 -31.5,42T200,880h-80q-33,0 -56.5,-23.5T40,800v-280q0,-33 23.5,-56.5T120,440h224q7,0 14,1.5t13,3.5l235,87q33,12 53.5,42t20.5,66h80q50,0 85,33t35,87q0,22 -11.5,34.5T833,815L583,893q-11,4 -23,4t-23,-3ZM120,800h80v-280h-80v280ZM560,78q12,0 23.5,3.5T606,93l200,143q16,11 25,28t9,37v219q0,17 -11.5,28.5T800,560q-17,0 -28.5,-11.5T760,520v-220L560,160 360,300v20q0,17 -11.5,28.5T320,360q-17,0 -28.5,-11.5T280,320v-19q0,-20 9,-37t25,-28l200,-143q11,-8 22.5,-11.5T560,78ZM560,180ZM520,320q8,0 14,-6t6,-14q0,-8 -6,-14t-14,-6q-8,0 -14,6t-6,14q0,8 6,14t14,6ZM600,320q8,0 14,-6t6,-14q0,-8 -6,-14t-14,-6q-8,0 -14,6t-6,14q0,8 6,14t14,6ZM520,400q8,0 14,-6t6,-14q0,-8 -6,-14t-14,-6q-8,0 -14,6t-6,14q0,8 6,14t14,6ZM600,400q8,0 14,-6t6,-14q0,-8 -6,-14t-14,-6q-8,0 -14,6t-6,14q0,8 6,14t14,6Z"
+        android:fillColor="#386A20"/>
+  </group>
 </vector>

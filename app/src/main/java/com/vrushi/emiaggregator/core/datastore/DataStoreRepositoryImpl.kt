@@ -34,4 +34,20 @@ class DataStoreRepositoryImpl(
             )
         }
     }
+
+    override suspend fun setAppTheme(theme: AppTheme) {
+        context.appSettingsDataStore.updateData {
+            it.copy(
+                appTheme = theme
+            )
+        }
+    }
+
+    override suspend fun setBackupFolder(path: String) {
+        context.appSettingsDataStore.updateData {
+            it.copy(
+                backupFolder = path
+            )
+        }
+    }
 }

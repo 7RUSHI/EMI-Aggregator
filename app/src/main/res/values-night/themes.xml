@@ -3,7 +3,7 @@
 
     <style name="Theme.EMIAggregator" parent="Theme.AppCompat.DayNight.NoActionBar" />
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/md_theme_light_background</item>
+        <item name="windowSplashScreenBackground">@color/md_theme_dark_background</item>
         <item name="postSplashScreenTheme">@style/Theme.EMIAggregator</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
     </style>

@@ -7,4 +7,6 @@ interface DataStoreRepository {
     suspend fun setInitialStart(initialStart: Boolean)
     suspend fun setAppLanguage(language: AppLanguage)
     suspend fun setAppBackupFrequency(frequency: AppBackupFrequency)
+    suspend fun setAppTheme(theme: AppTheme)
+    suspend fun setBackupFolder(path: String)
 }

@@ -4,7 +4,7 @@
     <string name="society_menu_settings">सेटिंग</string>
     <string name="society_menu_about">अबाउट</string>
     <string name="app_flow_button_next">नेक्स्ट</string>
-    <string name="app_flow_detail_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet dolor eligendi harum modi mollitia recusandae sint tempora voluptas voluptatem! Accusamus atque consequatur, debitis ipsam magni minus odit quidem velit?</string>
+    <string name="app_flow_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet dolor eligendi harum modi mollitia recusandae sint tempora voluptas voluptatem! Accusamus atque consequatur, debitis ipsam magni minus odit quidem velit?</string>
     <string name="app_permissions_button_allow">अलाउ</string>
     <string name="app_permissions_button_start">स्टाट</string>
 </resources>

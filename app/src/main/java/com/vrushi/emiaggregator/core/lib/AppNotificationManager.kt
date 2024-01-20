@@ -30,7 +30,7 @@ class AppNotificationManager private constructor(private val context: Context) {
         val notification = NotificationCompat.Builder(context, GENERAL_CHANNEL_ID)
             .setContentTitle("Test title")
             .setContentText("Test text")
-            .setSmallIcon(R.drawable.ic_android_black_24dp)
+            .setSmallIcon(R.drawable.real_estate_agent_black_24)
             .build()
         notificationManager.notify(145,notification)
     }
